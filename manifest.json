@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Language Learning Assistant",
+    "version": "1.0",
+    "description": "Translate words on hover and save them as flashcards.",
+    "permissions": ["activeTab", "storage", "contextMenus"],
+    "host_permissions": ["https://api.mymemory.translated.net/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
